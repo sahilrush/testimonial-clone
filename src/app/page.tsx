@@ -1,10 +1,16 @@
+"use client";
+
 import MaxWidthWrapper from '@/components/MaxWidthWrapper'
 import Link from 'next/link'
 import { ArrowRight } from 'lucide-react'
 import { buttonVariants } from '@/components/ui/button'
 import Image from 'next/image'
+import { signIn, signOut, useSession } from 'next-auth/react'
+import { useRouter } from 'next/navigation'
 
 export default function Home() {
+  const session = useSession()
+  const router = useRouter()  
   return (
     <>
       <MaxWidthWrapper className='mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center'>
@@ -17,16 +23,27 @@ export default function Home() {
         Collecting testimonials is hard, we get it! So we built Testimonial. In minutes, you can collect text and video testimonials from your customers with no need for a developer or website hosting.
         </p>
 
-        <Link
+        {session.data?.user ?<button
           className={buttonVariants({
             size: 'lg',
             className: 'mt-5',
           })}
-          href='/dashboard'
-          target='_blank'>
-          Try Free Now{' '}
+          onClick={() => {
+          router.push('/dashboard') 
+          }}
+          >
+           Go to Dashboard
           <ArrowRight className='ml-2 h-5 w-5' />
-        </Link>
+        </button> : <button
+          className={buttonVariants({
+            size: 'lg',
+            className: 'mt-5',
+          })}
+          onClick={()=> {
+            signIn();
+
+           }}
+          >Try Free Now</button>}
       </MaxWidthWrapper>
 
       <div>
