@@ -3,6 +3,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import Navbar from "@/components/Navbar";
+import { Providers } from "./provider";
+import { ThemeProvider } from "@/components/ui/theme-provider";
+import { ModeToggle } from "@/components/ui/mode-toggle";
+
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -30,8 +34,18 @@ export default function RootLayout({
       <body
         className={cn(`min-h-screen font-sans antialiased `, geistSans.className)}
       >
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+        <Providers>
         <Navbar/>
+
         {children}
+        </Providers>
+        </ThemeProvider>  
       </body>
     </html>
   );

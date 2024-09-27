@@ -9,12 +9,11 @@ export default function Home() {
     <>
       <MaxWidthWrapper className='mb-12 mt-28 sm:mt-40 flex flex-col items-center justify-center text-center'>
         
-        <h1 className='max-w-4xl text-5xl font-bold md:text-6xl lg:text-7xl'>
-          Get Testimonial From Your{' '}
+        <h1 className='max-w-8xl text-5xl font-bold md:text-4xl lg:text-6xl'>
+          Easily Collect Testimonials  From Your{' '}
           <span className='text-blue-600'>customers</span>{' '}
-          With Ease.
         </h1>
-        <p className='mt-5 max-w-prose text-zinc-700 sm:text-lg'>
+        <p className='mt-5 max-w-prose text-zinc-200 sm:text-lg'>
         Collecting testimonials is hard, we get it! So we built Testimonial. In minutes, you can collect text and video testimonials from your customers with no need for a developer or website hosting.
         </p>
 
@@ -30,7 +29,6 @@ export default function Home() {
         </Link>
       </MaxWidthWrapper>
 
-      {/* value proposition section */}
       <div>
         <div className='relative isolate'>
           <div
@@ -76,13 +74,12 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Feature section */}
       <div className='mx-auto mb-32 mt-32 max-w-5xl sm:mt-56'>
         <div className='mb-12 px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl sm:text-center'>
-            <h2 className='mt-2 font-bold text-4xl text-gray-900 sm:text-5xl'>
+            <h2 className='mt-2 font-bold text-4xl sm:text-5xl'>
             Add testimonials to your website with no coding!            </h2>
-            <p className='mt-4 text-lg text-gray-600'>
+            <p className='mt-4 text-lg '>
             Copy and paste our HTML code to add the Wall Of Love (👉 full version) to your website. We support any no-code platform (Webflow, WordPress, you name it!)
 
 
@@ -90,7 +87,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* steps */}
         <ol className='my-8 space-y-4 pt-8 md:flex md:space-x-12 md:space-y-0'>
           <li className='md:flex-1'>
             <div className='flex flex-col space-y-2 border-l-4 border-zinc-300 py-2 pl-4 md:border-l-0 md:border-t-2 md:pb-0 md:pl-0 md:pt-4'>
@@ -100,7 +96,7 @@ export default function Home() {
               <span className='text-xl font-semibold'>
               A dedicated landing page
               </span>
-              <span className='mt-2 text-zinc-700'>
+              <span className='mt-2 text-zinc-200'>
               Create a dedicated landing page for your business. Share the page link easily via email, social media, or even SMS. Setup can be done in two minutes.
                 <Link
                   href='/pricing'
@@ -118,7 +114,7 @@ export default function Home() {
               </span>
               <span className='text-xl font-semibold'>
               A dashboard to manage all testimonials              </span>
-              <span className='mt-2 text-zinc-700'>
+              <span className='mt-2 text-zinc-200'>
               You will have a simple & clean dashboard to manage all testimonials in one place. It's like your email inbox, but it's designed for your social proof!
               </span>
             </div>
@@ -131,7 +127,7 @@ export default function Home() {
               <span className='text-xl font-semibold'>
               Understand how video testimonials are performing
               </span>
-              <span className='mt-2 text-zinc-700'>
+              <span className='mt-2 text-zinc-200'>
               Track the metrics from all embedded videos, help your marketing team understand the performance at a glance, even promote the best-performing videos to different marketing channels.
               </span>
             </div>
