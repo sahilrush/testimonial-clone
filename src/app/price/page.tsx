@@ -34,25 +34,25 @@ const Page = () => {
                 <>
                   <li className='flex space-x-5'>
                     <div className='flex-shrink-0'>
-                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>-</span>
+                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>✔</span>
                     </div>
                     <p className='text-gray-600 dark:text-gray-400'>Limited to 5 projects
                     </p>
                   </li>
                   <li className='flex space-x-5'>
                     <div className='flex-shrink-0'>
-                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>-</span>
+                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>✔</span>
                     </div>
                     <p className='text-gray-600 dark:text-gray-400'>Custom feedback forms</p>
                   </li><li className='flex space-x-5'>
                     <div className='flex-shrink-0'>
-                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>-</span>
+                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>✔</span>
                     </div>
                     <p className='text-gray-600 dark:text-gray-400'>Limited feedback storage</p>
                   </li>
                   <li className='flex space-x-5'>
                     <div className='flex-shrink-0'>
-                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>-</span>
+                      <span className='h-6 w-6 text-gray-300 dark:text-gray-600'>✔</span>
                     </div>
                     <p className='text-gray-600 dark:text-gray-400'>Standard email support</p>
                   </li>

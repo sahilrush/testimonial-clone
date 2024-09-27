@@ -23,14 +23,14 @@ const Navbar = () => {
           <div className='hidden items-center space-x-4 sm:flex'>
         
               <>
-                {/* <Link
-                  href='/pricing'
+                <Link
+                  href='/price'
                   className={buttonVariants({
                     variant: 'ghost',
                     size: 'sm',
                   })}>
                   Pricing
-                </Link> */}
+                </Link>
            
                 <button
                  onClick={()=> signIn()}
