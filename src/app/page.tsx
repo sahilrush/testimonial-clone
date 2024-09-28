@@ -17,7 +17,7 @@ export default function Home() {
         
         <h1 className='max-w-8xl text-5xl font-bold md:text-4xl lg:text-6xl'>
           Easily Collect Testimonials  From Your{' '}
-          <span className='text-blue-600'>customers</span>{' '}
+          <span className='text-violet-600'>customers</span>{' '}
         </h1>
         <p className='mt-5 max-w-prose text-zinc-200 sm:text-lg'>
         Collecting testimonials is hard, we get it! So we built Testimonial. In minutes, you can collect text and video testimonials from your customers with no need for a developer or website hosting.
