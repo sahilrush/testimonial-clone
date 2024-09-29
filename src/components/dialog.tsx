@@ -14,6 +14,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Loader, PlusSquareIcon, SquarePlus } from "lucide-react";
 import { toast } from "sonner";
+import { createProject } from "@/actions/project";
 
 const CreateProject = () => {
   const [name, setName] = useState("");
@@ -38,19 +39,22 @@ const CreateProject = () => {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size={"sm"} className="flex items-center gap-2 w-full bg-purple-600 text-white hover:bg-purple-700 transition">
+        <div className=" flex justify-end w-full ">
+        <Button size={"sm"} className="flex items-center gap-2 justify-end bg-purple-600 text-white hover:bg-purple-700 transition">
           Create Project <SquarePlus size={16} />
         </Button>
+        </div>
       </DialogTrigger>
       <DialogContent className="md:max-w-[500px] max-w-[80vw] rounded-lg shadow-lg bg-gray-800 p-6">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold text-white">Create Project</DialogTitle>
         </DialogHeader>
-        <form className="grid gap-4 py-4" onSubmit={handleSubmit}>
+        <form className="grid gap-4 py-4" action={createProject}>
           <div className="grid gap-2">
             <Label htmlFor="name" className="text-gray-300">Project Name:</Label>
             <Input
               id="name"
+              name="name"
               placeholder="Enter project name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -62,6 +66,7 @@ const CreateProject = () => {
             <span className="text-[10px] text-red-500">URL should be unique...</span>
             <Input
               id="url"
+              name="url"  
               placeholder="Enter project URL: https://google.xyz/"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
@@ -73,6 +78,7 @@ const CreateProject = () => {
             <span className="text-[10px] text-red-500">5 minimum characters required...</span>
             <Textarea
               id="description"
+              name="description"  
               placeholder="Enter project description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -85,7 +91,8 @@ const CreateProject = () => {
                 <Loader size={16} className="animate-spin" />
               </Button>
             ) : (
-              <Button type="submit" className="w-full bg-purple-600 text-white hover:bg-purple-700 transition">
+              <Button 
+              type="submit" className="w-full bg-purple-600 text-white hover:bg-purple-700 transition">
                 Create Project
                 <PlusSquareIcon size={16} className="ml-1" />
               </Button>

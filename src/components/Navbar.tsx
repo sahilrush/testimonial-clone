@@ -7,6 +7,16 @@ import { ArrowRight } from 'lucide-react';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { ModeToggle } from './ui/mode-toggle';
 import { useRouter } from 'next/navigation';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"
+import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
+
 
 const Navbar = () => {
   const router = useRouter();
@@ -57,6 +67,28 @@ const Navbar = () => {
             <div className='flex justify-end sticky'>
               <ModeToggle />
             </div>
+            <DropdownMenu>
+      <DropdownMenuTrigger asChild>
+        <Avatar className="h-9 w-9">
+          <AvatarImage src="/placeholder-user.jpg" alt="@shadcn" />
+          <AvatarFallback>SR</AvatarFallback>
+          <span className="sr-only">Toggle user menu</span>
+        </Avatar>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent className="w-56">
+        <DropdownMenuItem asChild>
+          <Link href="#" className="block w-full text-left" prefetch={false}>
+            Profile
+          </Link>
+        </DropdownMenuItem>
+        <DropdownMenuSeparator />
+        <DropdownMenuItem asChild>
+          <Button variant="outline" className="block w-full text-left">
+            Logout
+          </Button>
+        </DropdownMenuItem>
+      </DropdownMenuContent>
+    </DropdownMenu>
           </div>
         </div>
       </MaxWidthWrapper>

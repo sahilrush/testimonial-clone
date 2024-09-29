@@ -10,21 +10,19 @@ import {
   } from "@/components/ui/dialog"
 import CreateProject from '@/components/dialog';
 import MaxWidthWrapper from '@/components/MaxWidthWrapper';
+import Sidebar from '@/components/sidebar';
 
 const Dashboard: React.FC = () => {
   return (
 
     <div className="flex h-screen bg-gray-900">
-      {/* Sidebar */}
       <aside className="w-64 bg-gray-800 shadow-md">
-        <div className="p-4">
-          <h2 className="text-xl font-bold text-white">Dashboard</h2>
+        <div className='p-4'>
+        <Sidebar />
+
         </div>
-        <nav>
-          <ul className="mt-6">
-           
-          </ul>
-        </nav>
+
+     
       </aside>
 
       {/* Main Content */}
