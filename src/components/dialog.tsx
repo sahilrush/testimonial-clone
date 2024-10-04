@@ -15,6 +15,7 @@ import { Input } from "./ui/input";
 import { Loader, PlusSquareIcon, SquarePlus } from "lucide-react";
 import { toast } from "sonner";
 import { createProject } from "@/actions/project";
+import { create } from "domain";
 
 const CreateProject = () => {
   const [name, setName] = useState("");
@@ -22,19 +23,6 @@ const CreateProject = () => {
   const [description, setDescription] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
-    e.preventDefault();
-    setLoading(true);
-
-    // Simulate project creation
-    setTimeout(() => {
-      toast.success("Project created successfully!");
-      setLoading(false);
-      setName("");
-      setUrl("");
-      setDescription("");
-    }, 1000);
-  };
 
   return (
     <Dialog>
@@ -49,12 +37,12 @@ const CreateProject = () => {
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold text-white">Create Project</DialogTitle>
         </DialogHeader>
-        <form className="grid gap-4 py-4" action={createProject}>
+        <form className="grid gap-4 py-4">
           <div className="grid gap-2">
             <Label htmlFor="name" className="text-gray-300">Project Name:</Label>
             <Input
-              id="name"
-              name="name"
+              id="title"
+              name="title"
               placeholder="Enter project name"
               value={name}
               onChange={(e) => setName(e.target.value)}
@@ -65,8 +53,8 @@ const CreateProject = () => {
             <Label htmlFor="url" className="text-gray-300">Project URL:</Label>
             <span className="text-[10px] text-red-500">URL should be unique...</span>
             <Input
-              id="url"
-              name="url"  
+              id="projectUrl"
+              name="projectUrl"  
               placeholder="Enter project URL: https://google.xyz/"
               value={url}
               onChange={(e) => setUrl(e.target.value)}
@@ -77,8 +65,8 @@ const CreateProject = () => {
             <Label htmlFor="description" className="text-gray-300">Project Description:</Label>
             <span className="text-[10px] text-red-500">5 minimum characters required...</span>
             <Textarea
-              id="description"
-              name="description"  
+              id="projectDescription"
+              name="projectDescription"  
               placeholder="Enter project description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -91,7 +79,11 @@ const CreateProject = () => {
                 <Loader size={16} className="animate-spin" />
               </Button>
             ) : (
-              <Button 
+              <Button  
+              onClick={() => {
+                createProject({title: name, url: url, description: description});     
+              }}
+
               type="submit" className="w-full bg-purple-600 text-white hover:bg-purple-700 transition">
                 Create Project
                 <PlusSquareIcon size={16} className="ml-1" />

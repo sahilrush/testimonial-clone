@@ -77,13 +77,15 @@ const Navbar = () => {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-56">
         <DropdownMenuItem asChild>
-          <Link href="#" className="block w-full text-left" prefetch={false}>
+          <Link  href={"/profile"} className="block w-full text-left" prefetch={false} >
             Profile
           </Link>
         </DropdownMenuItem>
         <DropdownMenuSeparator />
         <DropdownMenuItem asChild>
-          <Button variant="outline" className="block w-full text-left">
+          <Button onClick={() => {
+            session.data?.user ? signOut() : signIn();
+          }}  variant="outline" className="block w-full text-left">
             Logout
           </Button>
         </DropdownMenuItem>

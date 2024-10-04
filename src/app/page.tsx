@@ -23,7 +23,7 @@ export default function Home() {
         Collecting testimonials is hard, we get it! So we built Testimonial. In minutes, you can collect text and video testimonials from your customers with no need for a developer or website hosting.
         </p>
 
-        {session.data?.user ?<button
+        {session.data?.user?<button
           className={buttonVariants({
             size: 'lg',
             className: 'mt-5',
@@ -39,10 +39,9 @@ export default function Home() {
             size: 'lg',
             className: 'mt-5',
           })}
-          onClick={()=> {
-            signIn();
-
-           }}
+          onClick={async () => {
+            await signIn("google");
+          }}
           >Try Free Now</button>}
       </MaxWidthWrapper>
 
@@ -65,7 +64,7 @@ export default function Home() {
               <div className='mt-16 flow-root sm:mt-24'>
                 <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
                   <Image
-                    src='/dashboard-preview.jpg'
+                    src='/photo2.png' 
                     alt='product preview'
                     width={1364}
                     height={866}
@@ -95,7 +94,7 @@ export default function Home() {
         <div className='mb-12 px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl sm:text-center'>
             <h2 className='mt-2 font-bold text-4xl sm:text-5xl'>
-            Add testimonials to your website with no coding!            </h2>
+            Add testimonials to your website with no coding! </h2>
             <p className='mt-4 text-lg '>
             Copy and paste our HTML code to add the Wall Of Love (👉 full version) to your website. We support any no-code platform (Webflow, WordPress, you name it!)
 
@@ -130,7 +129,7 @@ export default function Home() {
               Easy to manage
               </span>
               <span className='text-xl font-semibold'>
-              A dashboard to manage all testimonials              </span>
+              A dashboard to manage all testimonials</span>
               <span className='mt-2 text-zinc-200'>
               You will have a simple & clean dashboard to manage all testimonials in one place. It's like your email inbox, but it's designed for your social proof!
               </span>
@@ -155,7 +154,7 @@ export default function Home() {
           <div className='mt-16 flow-root sm:mt-24'>
             <div className='-m-2 rounded-xl bg-gray-900/5 p-2 ring-1 ring-inset ring-gray-900/10 lg:-m-4 lg:rounded-2xl lg:p-4'>
               <Image
-                src='/file-upload-preview.jpg'
+                src='/photo2.webp'
                 alt='uploading preview'
                 width={1419}
                 height={732}

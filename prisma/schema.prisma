@@ -21,7 +21,6 @@ model User {
 model Projects {
   id                  String    @id @default(cuid())
   title               String
-  projectName         String
   projectUrl          String
   projectDescription  String
   reviews             Reviews[] // Relation to Reviews
